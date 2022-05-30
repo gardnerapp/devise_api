@@ -2,10 +2,12 @@
 
 # This model initially had no columns defined. If you add columns to the
 # model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
+# below each fixture per the syntax in the comments below
 #
-one: {}
+one:
+  email: 'example1@example.org'
 # column: value
 #
-two: {}
+two:
+  email: 'example2@example.org'
 # column: value
