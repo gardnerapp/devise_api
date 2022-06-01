@@ -4,6 +4,7 @@ DeviseApi::Engine.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :users, only: :update
       namespace :users do
         post '/sign_up', to: 'registrations#create'
       end

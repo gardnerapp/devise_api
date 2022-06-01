@@ -1,6 +1,7 @@
 module DeviseApi
   class Api::V1::Users::RegistrationsController < ActionController::API
 
+    # Create A User
     # POST /api/v1/users/sign_up
     def create
       @user = User.new(user_params)

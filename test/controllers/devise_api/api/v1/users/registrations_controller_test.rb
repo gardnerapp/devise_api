@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 module DeviseApi
   class Api::V1::Users::RegistrationsControllerTest < ActionDispatch::IntegrationTest
@@ -38,5 +38,6 @@ module DeviseApi
       assert body.include?('errors')
       assert_not body.include?('user')
     end
+
   end
 end
