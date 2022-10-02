@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 # DeviseApiController: A Light Weight Version of DeviseController
-class DeviseApiController < DeviseController
+
+class DeviseAPIController < DeviseController
 
   # Modules not normally included in ActionController
   API_MODULES = [ActionController::ApiRendering, ActionController::BasicImplicitRender].each {|mod| include mod}
@@ -32,15 +33,34 @@ class DeviseApiController < DeviseController
     ActionController::HttpAuthentication::Token::ControllerMethods
   ]
 
-ActionController::Base.without_modules(EXCESS_MODS)
+  # Remove excess modules
+  ActionController::Base.without_modules(EXCESS_MODS)
+
+  # A list of resource attributes that should not be exposed to the API Client
+  DANGEROUS_ATTRS = %i[
+    reset_password_token
+    encrypted_password
+    confirmation_token
+    unlock_token
+  ]
+
+  # returns the attributes of a resource as a json object
+  def resource_to_json
+    # compact removes nil attributes
+    resource.as_json(except: DANGEROUS_ATTRS).compact
+  end
+
+
+  def errors_to_json
+  end 
 
 
   # Basically this class needs to have methods for dynamically dealing with
   # resources
 
   # What are all of the methods that my controllers need
-  # 1) rendering resource as JSON, XML
-  # 2) rendering error messages from a resource
+  # 1) rendering resource as JSON
+  # 2) rendering error messages from a resource in json
   # 3) linking into already existing devise function
 
 
