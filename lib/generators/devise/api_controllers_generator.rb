@@ -4,7 +4,7 @@ require 'rails/generators/base'
 
 module Devise
   module Generators
-    class ApiControllersGenerator < Rails::Generators::Base
+    class APIControllersGenerator < Rails::Generators::Base
       # Rails::Generators::Base includes Thor::Actions, Rails::Generators::Actions
       CONTROLLERS = %w[registrations sessions].freeze
 

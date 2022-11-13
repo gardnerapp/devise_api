@@ -2,8 +2,8 @@
 
 require 'test_helper'
 # TODO add omniauth_controllers ??
-class ApiControllersGeneratorTest < Rails::Generators::TestCase
-  test Devise::Generators::ApiControllersGenerator # Controller we are testing
+class APIontrollersGeneratorTest < Rails::Generators::TestCase
+  test Devise::Generators::APIControllersGenerator # Controller we are testing
   destination File.expand_path("../../tmp") # Where we expect our test files to be
   setup :prepare_destination # whipe out previous files from tmp directory
 
