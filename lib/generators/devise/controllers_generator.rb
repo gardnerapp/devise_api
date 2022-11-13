@@ -33,7 +33,7 @@ module Devise
         @scope_prefix = scope.blank? ? '' : (scope.camelize + '::')
         controllers = options[:controllers] || CONTROLLERS
         controllers.each do |name|
-          template "api_#{name}_controller.rb",
+          template "#{name}_controller.rb",
                    "app/controllers/#{scope}/#{name}_controller.rb"
         end
       end
