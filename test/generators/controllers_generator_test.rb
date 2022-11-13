@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require "test_helper"
-
+# TODO Use this file as a scaffold for ApiControllerGenerator test
+# make sure that the files, name spacing and scope are correct
 class ControllersGeneratorTest < Rails::Generators::TestCase
   tests Devise::Generators::ControllersGenerator
   destination File.expand_path("../../tmp", __FILE__)

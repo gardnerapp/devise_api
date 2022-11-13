@@ -52,8 +52,7 @@ class DeviseAPIController < DeviseController
 
 
   def errors_to_json
-  end 
-
+  end
 
   # Basically this class needs to have methods for dynamically dealing with
   # resources
@@ -62,9 +61,5 @@ class DeviseAPIController < DeviseController
   # 1) rendering resource as JSON
   # 2) rendering error messages from a resource in json
   # 3) linking into already existing devise function
-
-
-
-
 
 end
